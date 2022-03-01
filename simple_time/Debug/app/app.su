@@ -1,0 +1,4 @@
+app.c:18:6:app_init	8	static
+app.c:23:6:app_switch_interrupt	8	static
+app.c:29:6:app_change_time	8	static
+app.c:34:6:app_loop	8	static

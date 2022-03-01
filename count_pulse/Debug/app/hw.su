@@ -1,0 +1,15 @@
+hw.c:16:6:HAL_GPIO_EXTI_Callback	16	static
+hw.c:23:6:hw_led_toggle	8	static
+hw.c:27:6:hw_cpu_sleep	4	static,ignoring_inline_asm
+hw.c:31:6:hw_timer_start_interruption	16	static
+hw.c:35:6:hw_timer_start	16	static
+hw.c:40:6:hw_timer_stop	16	static
+hw.c:45:6:hw_timer_stop_interruption	16	static
+hw.c:50:6:hw_set_timer	16	static
+hw.c:55:6:HAL_TIM_PeriodElapsedCallback	16	static
+hw.c:68:22:hw_get_state_time	16	static
+hw.c:72:6:hw_disable_exti	8	static
+hw.c:76:6:hw_enable_exti	8	static
+hw.c:80:6:hw_reset_timer	16	static
+hw.c:84:10:hw_get_time	16	static
+hw.c:88:6:hw_led_state_set	24	static

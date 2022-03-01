@@ -1,0 +1,4 @@
+app.c:19:6:app_init	8	static
+app.c:24:6:app_set_full	16	static
+app.c:28:6:app_switch_interrupt	8	static
+app.c:40:6:app_loop	8	static
