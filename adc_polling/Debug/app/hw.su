@@ -1,0 +1,9 @@
+hw.c:16:6:hw_timer_start	8	static
+hw.c:22:6:hw_cpu_sleep	4	static,ignoring_inline_asm
+hw.c:26:6:hw_adc_start	8	static
+hw.c:30:6:hw_calibration	4	static
+hw.c:34:6:hw_led_toggle	8	static
+hw.c:38:6:hw_adc_read	24	static
+hw.c:52:6:hw_reset_timer	16	static
+hw.c:56:6:hw_set_timer	16	static
+hw.c:61:6:HAL_TIM_PeriodElapsedCallback	24	static

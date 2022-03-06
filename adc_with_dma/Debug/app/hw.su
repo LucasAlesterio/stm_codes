@@ -1,0 +1,11 @@
+hw.c:19:6:hw_time_start	8	static
+hw.c:24:6:hw_time_stop	8	static
+hw.c:29:6:hw_adc_start	16	static
+hw.c:34:6:hw_adc_stop	8	static
+hw.c:39:6:HAL_ADC_ConvCpltCallback	16	static
+hw.c:44:6:hw_adc_calibration	4	static
+hw.c:49:6:hw_cpu_sleep	8	static
+hw.c:55:6:hw_led_toggle	8	static
+hw.c:59:6:hw_reset_timer	16	static
+hw.c:63:6:hw_set_timer	16	static
+hw.c:68:6:HAL_TIM_PeriodElapsedCallback	16	static
