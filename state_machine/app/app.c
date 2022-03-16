@@ -11,7 +11,7 @@
 #include "hw.h"
 
 #define N_DIGITS 5
-#define TIME_DEBOUNCING 5000
+#define TIME_DEBOUNCING 100
 #define MAX_TIME 5000
 
 uint8_t password[N_DIGITS] = {1, 1, 1, 1, 1};
@@ -76,7 +76,6 @@ void sm_reset_state(sm_state_var_t* st, led_t* led) {
 	if(!app_handle_led(led)){
 		next_state = SM_WAIT_DIGITS;
 		st->pos = 0;
-		tick_debouncing = 0;
 		time_out = 0;
 		led->repetitions = 0;
 		led->current_time = 0;
@@ -91,18 +90,11 @@ void sm_reset_state(sm_state_var_t* st, led_t* led) {
 
 void sm_wait_digits_state(sm_state_var_t* st,led_t* led ) {
 	sm_state_t next_state = st->state;
-	if(tick_debouncing > 1){
-		tick_debouncing--;
-	} else if(tick_debouncing == 1){
-		tick_debouncing--;
-		hw_enable_gpio_it();
-	} else {
-		if(time_out >= MAX_TIME){
-			app_led_set(led, 2, 200);
-			next_state = SM_RESET;
-		} else if(st->pos >= N_DIGITS){
-			next_state = SM_CHECK_CODE;
-		}
+	if(time_out >= MAX_TIME){
+		app_led_set(led, 2, 200);
+		next_state = SM_RESET;
+	} else if(st->pos >= N_DIGITS){
+		next_state = SM_CHECK_CODE;
 	}
 	time_out += 1;
 	st->state = next_state;
@@ -122,9 +114,19 @@ void app_init(void){
 	app_started = true;
 }
 
+static void app_handler_debouncing(void) {
+	if(tick_debouncing > 1){
+		tick_debouncing--;
+	} else if(tick_debouncing == 1){
+		tick_debouncing--;
+		hw_enable_gpio_it();
+	}
+}
+
 void app_tick_1ms(void) {
 	if (!app_started)
 		return;
+	app_handler_debouncing();
 	switch(st.state) {
 		case SM_RESET:
 			sm_reset_state(&st, &led);

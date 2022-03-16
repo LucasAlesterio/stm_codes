@@ -28,6 +28,10 @@ void hw_disable_gpio_it(void){
 }
 
 void hw_enable_gpio_it(void){
+	HAL_NVIC_ClearPendingIRQ(EXTI0_IRQn);
+	HAL_NVIC_ClearPendingIRQ(EXTI1_IRQn);
+	HAL_NVIC_ClearPendingIRQ(EXTI2_IRQn);
+	HAL_NVIC_ClearPendingIRQ(EXTI3_IRQn);
 	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 	HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 	HAL_NVIC_EnableIRQ(EXTI2_IRQn);
@@ -36,10 +40,6 @@ void hw_enable_gpio_it(void){
 
 void hw_led_toggle(void){
 	HAL_GPIO_TogglePin(USER_LED_GPIO_Port,USER_LED_Pin);
-}
-
-uint32_t hw_tick_ms_get(void){
-	return HAL_GetTick();
 }
 
 void hw_cpu_sleep(void){

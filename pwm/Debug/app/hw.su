@@ -1,0 +1,6 @@
+hw.c:15:6:HAL_GPIO_EXTI_Callback	16	static
+hw.c:21:6:hw_pwm_init	8	static
+hw.c:26:6:hw_reset_brightness	4	static
+hw.c:31:6:hw_increment_brightness	8	static
+hw.c:40:10:hw_tick_ms_get	8	static
+hw.c:44:6:hw_cpu_sleep	4	static,ignoring_inline_asm

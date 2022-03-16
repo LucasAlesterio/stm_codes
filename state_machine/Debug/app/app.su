@@ -2,8 +2,9 @@ app.c:43:6:app_add_digit	16	static
 app.c:55:6:app_led_set	24	static
 app.c:60:6:app_handle_led	16	static
 app.c:74:6:sm_reset_state	24	static
-app.c:92:6:sm_wait_digits_state	24	static
-app.c:111:6:sm_check_code_state	24	static
-app.c:121:6:app_init	4	static
-app.c:125:6:app_tick_1ms	8	static
-app.c:144:6:app_loop	8	static
+app.c:91:6:sm_wait_digits_state	24	static
+app.c:103:6:sm_check_code_state	24	static
+app.c:113:6:app_init	4	static
+app.c:117:13:app_handler_debouncing	8	static
+app.c:126:6:app_tick_1ms	8	static
+app.c:146:6:app_loop	8	static
